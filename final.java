@@ -1,17 +1,24 @@
-class final {
+import java.lang.*;
+import java.io.*;
+import java.util.*;
+ 
+class ReverseString {
     public static void main(String[] args)
     {
-        String input = "reverse";
+        String input = "practical";
+        char[] temparray = input.toCharArray();
+        int left, right = 0;
+        right = temparray.length - 1;
  
-        
-        byte[] strAsByteArray = input.getBytes();
+        for (left = 0; left < right; left++, right--) {
+            
+            char temp = temparray[left];
+            temparray[left] = temparray[right];
+            temparray[right] = temp;
+        }
  
-        byte[] result = new byte[strAsByteArray.length];
- 
-       
-        for (int i = 0; i < strAsByteArray.length; i++)
-            result[i] = strAsByteArray[strAsByteArray.length - i - 1];
- 
-        System.out.println(new String(result));
+        for (char c : temparray)
+            System.out.print(c);
+        System.out.println();
     }
 }
