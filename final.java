@@ -1,22 +1,22 @@
-class final
-{
-    public static String reverse(String str)
+import java.lang.*;
+import java.io.*;
+import java.util.*;
+ 
+
+class final {
+    public static void main(String[] args)
     {
-        if (str == null || str.equals(""))
-            return str;
-        String rev = "";
-        for (int i = str.length() - 1; i >=0 ; i--)
-            rev += str.charAt(i);
+        String input = "reverse";
  
-        return rev;
-    }
+        
+        byte[] strAsByteArray = input.getBytes();
  
-    public static void main (String[] args)
-    {
-        String str = "Reverse me!";
+        byte[] result = new byte[strAsByteArray.length];
  
-        str = reverse(str);
+       
+        for (int i = 0; i < strAsByteArray.length; i++)
+            result[i] = strAsByteArray[strAsByteArray.length - i - 1];
  
-        System.out.println("Reversed string is: " + str);
+        System.out.println(new String(result));
     }
 }
